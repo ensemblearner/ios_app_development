@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes And Objects/Car.swift"
+            timestampString = "548317085.031624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "Car"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Classes_And_Objects.Car.init (carColor : Swift.String) -&gt; Classes_And_Objects.Car"
+                  moduleName = "Classes And Objects"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/msingh/Desktop/personal/ios_app_dev/Classes%20And%20Objects/Classes%20And%20Objects/Car.swift"
+                  timestampString = "548317086.802187"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Classes_And_Objects.Car.__allocating_init (carColor : Swift.String) -&gt; Classes_And_Objects.Car"
+                  moduleName = "Classes And Objects"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/msingh/Desktop/personal/ios_app_dev/Classes%20And%20Objects/Classes%20And%20Objects/Car.swift"
+                  timestampString = "548317086.803978"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
