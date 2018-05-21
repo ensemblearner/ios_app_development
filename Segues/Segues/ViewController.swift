@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CanReceive {
 
+    @IBOutlet weak var askMe: UIButton!
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +24,19 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func buttonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "goToThirdScreen", sender: self)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSecondScreen"{
             let destinationVC =  segue.destination as! SecondViewController
-            destinationVC.textPassedOver = textField.text!
+            destinationVC.data = textField.text!
+            destinationVC.delegate = self
             
         }
         
+    }
+    
+    func dataReceived(data: String) {
+       label.text = data
     }
 }
 

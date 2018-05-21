@@ -8,16 +8,24 @@
 
 import UIKit
 
+protocol  CanReceive {
+    func dataReceived(data: String)
+}
+
 class SecondViewController: UIViewController {
+    
+    var delegate : CanReceive?
+    var data = ""
 
     @IBOutlet weak var label: UILabel!
-    var textPassedOver: String?
     
+    @IBOutlet weak var chimeBack: UIButton!
+    @IBOutlet weak var secondViewTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        label.text = textPassedOver
+        label.text = data
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +34,10 @@ class SecondViewController: UIViewController {
     }
     
 
+    @IBAction func sendDataBack(_ sender: Any) {
+        delegate?.dataReceived(data: secondViewTextField.text!)
+        dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -35,5 +47,7 @@ class SecondViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }
