@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ma4-Ds-Rtr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ma4-Ds-Rtr">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <viewLayoutGuide key="safeArea" id="ggK-zx-Ajd"/>
                             </imageView>
@@ -40,6 +40,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cameraButton" destination="wn5-dI-Bq3" id="Czn-FI-eaJ"/>
                         <outlet property="imageView" destination="Ma4-Ds-Rtr" id="UpG-x7-MQv"/>
                     </connections>
                 </viewController>

@@ -12,9 +12,10 @@ import Vision
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -23,8 +24,9 @@ UINavigationControllerDelegate {
         imagePicker.sourceType =  .photoLibrary //.camera
         imagePicker.allowsEditing = false
     }
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        cameraButton.isEnabled = false
         if let userPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             imageView.image = userPickedImage
             
@@ -52,10 +54,16 @@ UINavigationControllerDelegate {
             {
                 if firstResult.identifier.contains("hotdog")
                 {
-                    self.navigationItem.title = "HotDog"
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = "HotDog"
+                    }
+                    
                 } else
                 {
-                    self.navigationItem.title = "Not HotDog!"
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = "Not HotDog!"
+                    }
+                    
                 }
             }
         }
@@ -69,7 +77,7 @@ UINavigationControllerDelegate {
         }
         
         
-        }
+    }
     
     
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
