@@ -9,6 +9,7 @@
 import UIKit
 import CoreML
 import Vision
+import SVProgressHUD
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
@@ -27,6 +28,7 @@ UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         cameraButton.isEnabled = false
+        SVProgressHUD.show()
         if let userPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             imageView.image = userPickedImage
             
@@ -52,16 +54,24 @@ UINavigationControllerDelegate {
             }
             if let firstResult = results.first
             {
+                DispatchQueue.main.async {
+                    self.cameraButton.isEnabled = true
+                    SVProgressHUD.dismiss()
+                }
                 if firstResult.identifier.contains("hotdog")
                 {
                     DispatchQueue.main.async {
                         self.navigationItem.title = "HotDog"
+                        self.navigationController?.navigationBar.barTintColor = UIColor.green
+                        self.navigationController?.navigationBar.isTranslucent = false
                     }
                     
                 } else
                 {
                     DispatchQueue.main.async {
                         self.navigationItem.title = "Not HotDog!"
+                        self.navigationController?.navigationBar.barTintColor = UIColor.red
+                        self.navigationController?.navigationBar.isTranslucent = false
                     }
                     
                 }
